@@ -18,7 +18,7 @@ export default function App() {
     })
     setTimeout(()=>{
         setAlert(null)
-    },1000)
+    },2500)
 }
   return (
     <NoteState>

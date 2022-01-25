@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
 export default function Login(props) {
-    const host = "http://13.235.113.255:5000"
+    const host = "http://localhost"
     const [credentials, setCredentials] = useState({email: "", password: ""})
     let history = useHistory()
     const handleSubmit = async (e) => {
@@ -15,7 +15,6 @@ export default function Login(props) {
             body: JSON.stringify({ email: credentials.email, password: credentials.password })
         })
         const json = await response.json()
-        console.log(json)
         if(json.success===true){
             history.push("/")
             localStorage.setItem("token", json.authToken)
@@ -41,7 +40,7 @@ export default function Login(props) {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input value={credentials.password} onChange={onChange} type="password" className="form-control" name="password" id="password" placeholder="Password" />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary my-2">Submit</button>
             </form>
         </div>
     )

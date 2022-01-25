@@ -2,9 +2,8 @@ import React from 'react'
 
 const PageNotFound = () => {
     return (
-        <div id="wrapper">
-            <img src="https://i.imgur.com/qIufhof.png" />
-            <div id="info">
+        <div className="wrapper">
+            <div className="info" style={{textAlign: 'center'}}>
                 <h3>This page could not be found</h3>
             </div>
         </div >
