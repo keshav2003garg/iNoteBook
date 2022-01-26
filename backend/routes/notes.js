@@ -7,7 +7,7 @@ const { body, validationResult } = require('express-validator');
 
 
 
-router.get('/fetch-all-notes', fetchuser,
+router.post('/fetch-all-notes', fetchuser,
     async (req, res)=>{
         try {
             const fetchNotes = await Notes.find({user: req.user})
