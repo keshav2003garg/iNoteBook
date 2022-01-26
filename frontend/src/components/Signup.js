@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
 export default function Signup(props) {
-    const host = "http://localhost"
+    const host = process.env.REACT_APP_HOST
     const [credentials, setCredentials] = useState({name: "", email: "", password: "", confirmpassword: ""})
     let history = useHistory()
     const handleSubmit = async (e) => {

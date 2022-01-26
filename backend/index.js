@@ -10,6 +10,9 @@ connectToMongo()
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 app.use(cors())
 app.use(express.json())
+app.get('/*/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
+})
 app.use("/api/auth", require("./routes/auth"))
 app.use("/api/notes", require("./routes/notes"))
 
